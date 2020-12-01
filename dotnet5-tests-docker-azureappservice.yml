@@ -28,12 +28,6 @@ jobs:
     - name: Executar testes automatizados
       run: dotnet test ${{ env.CAMINHO_PROJETO_TESTES }} --verbosity minimal
 
-    - name: Build com o utilitario dotnet
-      run: dotnet build ${{ env.CAMINHO_PROJETO_WEBAPP }} --configuration Release
-
-    - name: Publish com o utilitario dotnet
-      run: dotnet publish ${{ env.CAMINHO_PROJETO_WEBAPP }} -c Release -o app
-
     - name: Login no Azure Container Registry
       uses: docker/login-action@v1.6.0
       with:
